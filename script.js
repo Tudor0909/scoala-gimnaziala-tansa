@@ -610,7 +610,65 @@
 
     btn.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
+      setTimeout(() => {
+        btn.blur();
+      }, 100);
     });
+  }
+
+  function setupHeaderButtonsFix() {
+    document.querySelectorAll(".schedule-top-button, .header-fb-button, .contact-detail-value a").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        setTimeout(() => {
+          btn.blur();
+        }, 100);
+      });
+    });
+  }
+
+  function setupContactForm() {
+    const form = document.querySelector("#contactForm");
+    if (!form) return;
+
+    const submitBtn = form.querySelector("#contactSubmitBtn");
+    const resetBtn = form.querySelector("#contactResetBtn");
+    const inputs = form.querySelectorAll("input, textarea");
+
+    const originalBtnContent = submitBtn.innerHTML;
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      inputs.forEach(input => input.disabled = true);
+
+      submitBtn.disabled = true;
+      submitBtn.style.backgroundColor = "#10b981";
+      submitBtn.style.borderColor = "#10b981";
+      submitBtn.style.color = "#ffffff";
+      submitBtn.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Mesajul a fost trimis cu succes!
+      `;
+
+      if (resetBtn) {
+        resetBtn.style.display = "inline-flex";
+      }
+    });
+
+    if (resetBtn) {
+      resetBtn.addEventListener("click", () => {
+        form.reset();
+        inputs.forEach(input => input.disabled = false);
+
+        submitBtn.disabled = false;
+        submitBtn.style.backgroundColor = "";
+        submitBtn.style.borderColor = "";
+        submitBtn.style.color = "";
+        submitBtn.innerHTML = originalBtnContent;
+
+        resetBtn.style.display = "none";
+      });
+    }
   }
 
   setupNavigation();
@@ -621,4 +679,6 @@
   setupLightbox();
   setupScrollAnimations();
   setupBackToTop();
+  setupHeaderButtonsFix();
+  setupContactForm();
 })();
