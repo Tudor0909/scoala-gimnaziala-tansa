@@ -642,7 +642,7 @@
       inputs.forEach(input => input.disabled = true);
 
       submitBtn.disabled = true;
-      submitBtn.style.backgroundColor = "#10b981";
+      submitBtn.style.background = "#10b981";
       submitBtn.style.borderColor = "#10b981";
       submitBtn.style.color = "#ffffff";
       submitBtn.innerHTML = `
@@ -661,7 +661,7 @@
         inputs.forEach(input => input.disabled = false);
 
         submitBtn.disabled = false;
-        submitBtn.style.backgroundColor = "";
+        submitBtn.style.background = "";
         submitBtn.style.borderColor = "";
         submitBtn.style.color = "";
         submitBtn.innerHTML = originalBtnContent;
