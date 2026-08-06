@@ -1,0 +1,572 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta name="google-site-verification" content="VIQOlGBAmx-KF3SUxg8Q3_IBUdviZ5FPN_os28efrp4">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBEXLSRDNF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-HBEXLSRDNF');
+    </script>
+  <meta charset="UTF-8">
+  <title>Ofertă realizare website de prezentare</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 14mm 16mm 14mm 16mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      color: #1a1a1a;
+      background: #ffffff;
+      font-size: 10pt;
+      line-height: 1.4;
+    }
+
+    .page {
+      width: 100%;
+      height: 268mm;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-break {
+      page-break-after: always;
+      break-after: page;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .company-title {
+      font-size: 13.5pt;
+      font-weight: 800;
+      color: #000000;
+      letter-spacing: -0.2px;
+      margin-bottom: 3px;
+    }
+
+    .company-details {
+      font-size: 8.5pt;
+      color: #4a4a4a;
+      line-height: 1.35;
+    }
+
+    .company-details strong {
+      color: #1a1a1a;
+    }
+
+    .beneficiar {
+      text-align: right;
+      font-size: 8.5pt;
+    }
+
+    .beneficiar-label {
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      color: #707070;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .beneficiar-name {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #000000;
+    }
+
+    .beneficiar-sub {
+      color: #606060;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1.5px solid #000000;
+      margin: 8px 0 12px 0;
+    }
+
+    /* Title Block */
+    .doc-title {
+      font-size: 17pt;
+      font-weight: 800;
+      color: #000000;
+      margin-bottom: 3px;
+    }
+
+    .doc-number {
+      font-size: 9.5pt;
+      color: #606060;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .doc-description {
+      font-size: 9pt;
+      color: #555555;
+      font-style: italic;
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+
+    /* Metadata boxes */
+    .meta-grid {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .meta-box {
+      border: 1px solid #000000;
+      border-radius: 6px;
+      padding: 8px 12px;
+      flex: 1;
+    }
+
+    .meta-box.small {
+      flex: 0 0 135px;
+    }
+
+    .meta-label {
+      font-size: 6.5pt;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #606060;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .meta-value {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #000000;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 14px;
+    }
+
+    .section-header {
+      font-size: 11pt;
+      font-weight: 800;
+      color: #000000;
+      padding-bottom: 3px;
+      border-bottom: 1.5px solid #000000;
+      margin-bottom: 8px;
+    }
+
+    .section-intro {
+      font-size: 9pt;
+      margin-bottom: 8px;
+    }
+
+    /* Highlight box */
+    .highlight-box {
+      background: #ffffff;
+      border-left: 3px solid #000000;
+      padding: 8px 12px;
+      margin: 8px 0;
+      font-size: 8.5pt;
+      color: #222222;
+      line-height: 1.35;
+    }
+
+    /* Two column lists */
+    .cols-2 {
+      display: flex;
+      gap: 20px;
+    }
+
+    .col {
+      flex: 1;
+    }
+
+    .col-title {
+      font-size: 8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      color: #000000;
+    }
+
+    ul.list {
+      list-style-type: disc;
+      padding-left: 16px;
+      font-size: 9pt;
+    }
+
+    ul.list li {
+      margin-bottom: 3px;
+    }
+
+    /* 3 column grid */
+    .cols-3 {
+      display: flex;
+      gap: 14px;
+    }
+
+    .col-3 {
+      flex: 1;
+    }
+
+    .note-text {
+      font-size: 7.5pt;
+      color: #666666;
+      font-style: italic;
+      margin-top: 8px;
+      line-height: 1.3;
+    }
+
+    /* Table */
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: 9pt;
+    }
+
+    table.data-table th,
+    table.data-table td {
+      border: 1px solid #d0d0d0;
+      padding: 7px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    table.data-table th {
+      background: #f8f9fa;
+      font-weight: 700;
+      color: #000000;
+      border-bottom: 1.5px solid #000000;
+    }
+
+    /* Price box */
+    .price-card {
+      border: 1px solid #000000;
+      border-radius: 6px;
+      padding: 12px 14px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin: 10px 0;
+    }
+
+    .price-value-box {
+      flex: 0 0 180px;
+      text-align: center;
+      border-right: 1px solid #e0e0e0;
+      padding-right: 14px;
+    }
+
+    .price-label {
+      font-size: 7pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #606060;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+
+    .price-amount {
+      font-size: 18pt;
+      font-weight: 800;
+      color: #000000;
+    }
+
+    .price-description {
+      font-size: 8.5pt;
+      color: #333333;
+      line-height: 1.35;
+    }
+
+    .disclaimer-box {
+      border: 1px solid #a0a0a0;
+      border-radius: 5px;
+      padding: 8px 10px;
+      font-size: 8pt;
+      color: #444444;
+      line-height: 1.35;
+      margin-top: 8px;
+    }
+
+    /* Acceptance / Footer Signature */
+    .signature-section {
+      margin-top: 16px;
+    }
+
+    .vat-note {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: #000000;
+      margin-bottom: 20px;
+    }
+
+    .signer-block {
+      text-align: right;
+      margin-top: 10px;
+    }
+
+    .signer-company {
+      font-size: 11pt;
+      font-weight: 800;
+      color: #000000;
+    }
+
+    .signer-name {
+      font-size: 9.5pt;
+      color: #444444;
+      margin-top: 2px;
+    }
+
+    /* Page Footer */
+    .page-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 8pt;
+      color: #888888;
+      border-top: 1px solid #e5e5e5;
+      padding-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGINA 1 -->
+  <div class="page page-break">
+    <div class="header">
+      <div>
+        <div class="company-title">RESOURCES FOR EDUCATION S.R.L.</div>
+        <div class="company-details">
+          CIF: <strong>27417884</strong> &nbsp;|&nbsp; Reg. com.: <strong>J2010001271222</strong><br>
+          Sediu: <strong>Bl:33, Sc:b, Et:2, Ap. 9, Tomesti, Iasi, 700072</strong><br>
+          Adm: <strong>Ursanu Gabriela</strong> &nbsp;|&nbsp; Nr. telefon: <strong>0748590076</strong>
+        </div>
+      </div>
+      <div class="beneficiar">
+        <div class="beneficiar-label">BENEFICIAR</div>
+        <div class="beneficiar-name">Școala Gimnazială Țansa</div>
+        <div class="beneficiar-sub">Loc. Țansa, Județul Iași</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="doc-title">Ofertă realizare website de prezentare</div>
+    <div class="doc-number">Nr. 23 / 23.06.2026</div>
+    <div class="doc-description">
+      Realizarea unui website modern, clar structurat și ușor de administrat pentru Școala Gimnazială Țansa, cu accent pe informarea rapidă a elevilor, părinților, cadrelor didactice și comunității locale.
+    </div>
+
+    <div class="meta-grid">
+      <div class="meta-box">
+        <div class="meta-label">PROIECT</div>
+        <div class="meta-value">Website Școală</div>
+      </div>
+      <div class="meta-box small">
+        <div class="meta-label">DATA OFERTEI</div>
+        <div class="meta-value">23.06.2026</div>
+      </div>
+      <div class="meta-box small">
+        <div class="meta-label">VALABILITATE</div>
+        <div class="meta-value">30 zile calendaristice</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">1. Obiectiv</div>
+      <div class="section-intro">
+        Scopul proiectului este crearea unui site de prezentare care să ofere o imagine profesională instituției și să centralizeze informațiile importante într-un spațiu online accesibil de pe telefon, tabletă și desktop.
+      </div>
+      <div class="highlight-box">
+        Website-ul va fi construit pe o structură simplă, rapidă și ușor de întreținut, fără elemente vizuale inutile sau funcționalități greu de administrat.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">2. Structură inclusă</div>
+      <div class="cols-2">
+        <div class="col">
+          <div class="col-title">PAGINI PRINCIPALE</div>
+          <ul class="list">
+            <li>Acasă</li>
+            <li>Despre școală</li>
+            <li>Conducere și cadre didactice</li>
+            <li>Noutăți și Anunțuri</li>
+            <li>Documente utile</li>
+            <li>Proiecte și activități</li>
+          </ul>
+        </div>
+        <div class="col">
+          <div class="col-title">SECȚIUNI</div>
+          <ul class="list">
+            <li>Galerie foto</li>
+            <li>Orar și informații pentru elevi</li>
+            <li>Informații pentru părinți</li>
+            <li>Contact, hartă și program</li>
+            <li>Politică de confidențialitate</li>
+            <li>Administrare conținut</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">3. Servicii incluse</div>
+      <div class="cols-3">
+        <div class="col-3">
+          <div class="col-title">PLANIFICARE</div>
+          <ul class="list">
+            <li>Structură site și meniuri</li>
+            <li>Organizare conținut</li>
+            <li>Recomandări pagini</li>
+          </ul>
+        </div>
+        <div class="col-3">
+          <div class="col-title">IMPLEMENTARE</div>
+          <ul class="list">
+            <li>Design responsive</li>
+            <li>Platformă administrabilă</li>
+            <li>Formular de contact</li>
+          </ul>
+        </div>
+        <div class="col-3">
+          <div class="col-title">OPTIMIZARE</div>
+          <ul class="list">
+            <li>Viteză și securitate de bază</li>
+            <li>SEO on-page</li>
+            <li>GDPR și cookies</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note-text">
+        * Sunt incluse testarea pe diverse dispozitive, lansarea oficială a site-ului și o sesiune scurtă de instruire pentru actualizarea independentă a anunțurilor, paginilor, imaginilor și documentelor.
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>RESOURCES FOR EDUCATION S.R.L.</span>
+      <span>Pagina 1 din 2</span>
+    </div>
+  </div>
+
+
+  <!-- PAGINA 2 -->
+  <div class="page">
+    <div class="header">
+      <div>
+        <div class="company-title" style="font-size: 11pt;">RESOURCES FOR EDUCATION S.R.L.</div>
+      </div>
+    </div>
+
+    <hr class="divider" style="margin-top: 3px; margin-bottom: 12px;">
+
+    <div class="section">
+      <div class="section-header">4. Etape și termen de execuție</div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th style="width: 25%;">Etapă</th>
+            <th style="width: 50%;">Activități</th>
+            <th style="width: 25%;">Durată estimată</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Planificare</strong></td>
+            <td>Structură, colectare materiale inițiale și stabilire direcție vizuală.</td>
+            <td>1-2 zile lucrătoare</td>
+          </tr>
+          <tr>
+            <td><strong>Design & Dezvoltare</strong></td>
+            <td>Realizarea paginilor, a meniurilor și a tuturor funcționalităților convenite.</td>
+            <td>10-15 zile lucrătoare</td>
+          </tr>
+          <tr>
+            <td><strong>Testare & Lansare</strong></td>
+            <td>Verificare generală, corecturi finale, publicare pe server și instruirea personalului.</td>
+            <td>3-5 zile lucrătoare</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="note-text">
+        Termen total estimat: 15-20 zile lucrătoare de la primirea materialelor complete și confirmarea structurii.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">5. Cost ofertat</div>
+      <div class="price-card">
+        <div class="price-value-box">
+          <div class="price-label">COST TOTAL REALIZARE WEBSITE</div>
+          <div class="price-amount">4.850 RON</div>
+        </div>
+        <div class="price-description">
+          Valoarea include toate etapele menționate: proiectare, implementare, configurare tehnică, optimizare pentru motoarele de căutare, testare, lansare pe domeniu și sesiunea de instruire.
+        </div>
+      </div>
+      <div class="disclaimer-box">
+        <strong>Notă:</strong> Costurile privind achiziția domeniului web, serviciile de găzduire (hosting), eventuale licențe software externe sau module terțe specifice nu sunt incluse în preț. Configurarea și legarea acestora de site sunt incluse, cu condiția ca datele de acces să fie puse la dispoziție de beneficiar.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">6. Mentenanță opțională</div>
+      <div class="section-intro">
+        După lansare, se poate asigura asistență și mentenanță tehnică lunară pentru buna funcționare a platformei, actualizări de securitate, backup periodic, mici modificări de text/imagini și suport în administrare.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">7. Condiții și observații</div>
+      <ul class="list" style="margin-left: 4px;">
+        <li>Conținutul inițial (texte în format digital, imagini, documente PDF etc.) va fi furnizat de beneficiar.</li>
+        <li>Textele juridice finale privind GDPR și cookies vor fi validate și asumate de reprezentanții instituției.</li>
+        <li>Funcționalitățile suplimentare (ex. catalog electronic, e-learning) pot fi ofertate separat la cerere.</li>
+      </ul>
+    </div>
+
+    <div class="section signature-section">
+      <div class="section-header">8. Acceptare ofertă</div>
+      <div class="section-intro" style="margin-bottom: 12px;">
+        Acceptarea prezentei oferte reprezintă acordul de voință pentru începerea etapei de planificare și stabilirea calendarului de lucru.
+      </div>
+
+      <div class="vat-note">
+        RESOURCES FOR EDUCATION S.R.L. – nu este plătitoare de TVA.
+      </div>
+
+      <div class="signer-block">
+        <div class="signer-company">RESOURCES FOR EDUCATION S.R.L.</div>
+        <div class="signer-name">Adm. Ursanu Gabriela</div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>RESOURCES FOR EDUCATION S.R.L.</span>
+      <span>Pagina 2 din 2</span>
+    </div>
+  </div>
+
+</body>
+</html>

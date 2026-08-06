@@ -1,0 +1,52 @@
+<svg viewBox="0 0 100 100" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Arc sus: stânga→dreapta peste vârf -->
+    <path id="topArc" d="M 12,50 A 38,38 0 0,1 88,50" fill="none"/>
+    <!-- Arc jos: stânga→dreapta pe sub (sens invers) = text lizibil pe margine jos -->
+    <path id="bottomArc" d="M 8,50 A 42,42 0 0,0 92,50" fill="none"/>
+  </defs>
+
+  <!-- Fundal exterior -->
+  <circle cx="50" cy="50" r="48" fill="#0f172a" stroke="#d97706" stroke-width="2.5"/>
+  <!-- Fundal interior albastru -->
+  <circle cx="50" cy="50" r="43.5" fill="#1e3a8a" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <!-- Inel decorativ punctat -->
+  <circle cx="50" cy="50" r="35" fill="none" stroke="#d97706" stroke-width="0.9" stroke-dasharray="2 1.8"/>
+
+  <!-- ═══ CARTE DESCHISĂ ═══ -->
+
+  <!-- Pagina stângă -->
+  <path d="M 24,58 C 30,57 38,59.5 47,62.5 V 40 C 38,37 30,34.5 24,35.5 Z"
+        fill="#ffffff" stroke="#1e293b" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- Pagina dreaptă -->
+  <path d="M 76,58 C 70,57 62,59.5 53,62.5 V 40 C 62,37 70,34.5 76,35.5 Z"
+        fill="#ffffff" stroke="#1e293b" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- Coloana vertebrală -->
+  <line x1="50" y1="40" x2="50" y2="62.5" stroke="#1e293b" stroke-width="1.6"/>
+
+  <!-- Linii text pagina stângă -->
+  <line x1="29" y1="43" x2="45.5" y2="44.5" stroke="#93c5fd" stroke-width="0.9"/>
+  <line x1="29" y1="47.5" x2="45.5" y2="48.5" stroke="#93c5fd" stroke-width="0.9"/>
+  <line x1="29" y1="52" x2="45.5" y2="52.5" stroke="#93c5fd" stroke-width="0.9"/>
+  <line x1="29" y1="56.5" x2="45.5" y2="56.5" stroke="#93c5fd" stroke-width="0.9"/>
+
+  <!-- Linii text pagina dreaptă -->
+  <line x1="71" y1="43" x2="54.5" y2="44.5" stroke="#93c5fd" stroke-width="0.9"/>
+  <line x1="71" y1="47.5" x2="54.5" y2="48.5" stroke="#93c5fd" stroke-width="0.9"/>
+  <line x1="71" y1="52" x2="54.5" y2="52.5" stroke="#93c5fd" stroke-width="0.9"/>
+  <line x1="71" y1="56.5" x2="54.5" y2="56.5" stroke="#93c5fd" stroke-width="0.9"/>
+
+  <!-- ═══ TEXT CIRCULAR ═══ -->
+
+  <!-- Sus: ȘCOALA GIMNAZIALĂ TANSA -->
+  <text fill="#ffffff" font-size="7.2" font-family="'Segoe UI', Arial, sans-serif"
+        font-weight="800" letter-spacing="0.3">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">ȘCOALA GIMNAZIALĂ TANSA</textPath>
+  </text>
+
+  <!-- Jos: JUDEȚUL IAȘI — curbat pe arc jos, același stil -->
+  <text fill="#fbbf24" font-size="7.2" font-family="'Segoe UI', Arial, sans-serif"
+        font-weight="800" letter-spacing="1.5">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">JUDEȚUL IAȘI</textPath>
+  </text>
+</svg>
