@@ -177,10 +177,10 @@
     {
       title: "Dotări",
       eyebrow: "Facilități & Infrastructură",
-      desc: "5 corpuri de clădiri cu 14 săli de clasă, laboratoare de informatică, biologie, fizică-chimie, bibliotecă și internet",
+      desc: "5 corpuri de clădiri cu 14 săli de clasă, laboratoare de informatică, biologie, fizică-chimie și bibliotecă",
       badge: "Școala noastră",
       url: "scoala-noastra.html#baza",
-      keywords: "facilitati baza materiala laborator informatica biologie chimie biblioteca internet wireless corpuri cladiri"
+      keywords: "facilitati baza materiala laborator informatica biologie chimie biblioteca corpuri cladiri"
     },
     {
       title: "Elevii noștri",
