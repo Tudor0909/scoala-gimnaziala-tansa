@@ -487,7 +487,7 @@
         iframe.title = "Hartă Google Maps — Școala Gimnazială Tansa, Iași";
         iframe.loading = "lazy";
         iframe.referrerPolicy = "no-referrer-when-downgrade";
-        iframe.src = "https://www.google.com/maps?q=%C8%98coala+Tansa,+Tansa&z=17&output=embed";
+        iframe.src = "https://www.google.com/maps?q=Scoala+Gimnaziala+Tansa&z=17&output=embed";
         iframe.style.cssText = "width:100%;height:100%;border:0;";
         iframe.allowFullscreen = true;
         frameTansa.appendChild(iframe);
@@ -498,7 +498,7 @@
         iframe.title = "Hartă Google Maps — Școala Gimnazială Suhuleț, Iași";
         iframe.loading = "lazy";
         iframe.referrerPolicy = "no-referrer-when-downgrade";
-        iframe.src = "https://www.google.com/maps?q=Scoala+Suhulet,+Iasi&z=17&output=embed";
+        iframe.src = "https://www.google.com/maps?q=Scoala+1-8+Suhulet&z=17&output=embed";
         iframe.style.cssText = "width:100%;height:100%;border:0;";
         iframe.allowFullscreen = true;
         frameSuhulet.appendChild(iframe);
