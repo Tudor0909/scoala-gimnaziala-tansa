@@ -104,6 +104,11 @@ button {
   outline-offset: 3px;
 }
 
+:focus:not(:focus-visible) {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .container {
   width: min(100% - 32px, var(--container));
   margin-inline: auto;
@@ -470,19 +475,21 @@ button {
   transition: var(--transition);
 }
 
-.main-nav a:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.22);
+@media (hover: hover) {
+  .main-nav a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.22);
+  }
+
+  .main-nav a.is-active:hover {
+    background: #1d4ed8;
+  }
 }
 
 .main-nav a.is-active {
   color: #ffffff;
   background: var(--blue);
   box-shadow: 0 2px 8px rgba(30, 64, 175, 0.4);
-}
-
-.main-nav a.is-active:hover {
-  background: #1d4ed8;
 }
 
 .hero {
@@ -592,21 +599,27 @@ h3 {
   background: linear-gradient(135deg, var(--blue), #1d4ed8);
 }
 
-.button--primary:hover {
-  background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-glow);
-}
-
 .button--light {
   color: var(--navy);
   background: #ffffff;
 }
 
-.button--light:hover {
-  background: var(--soft);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-small);
+@media (hover: hover) {
+  .button--primary:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .button--light:hover {
+    background: var(--soft);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-small);
+  }
+}
+
+.button:active {
+  transform: translateY(0);
 }
 
 .button--ghost {
@@ -981,11 +994,22 @@ h3 {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
 
-.feed-card--link:hover {
-  background: #ffffff;
-  border-color: var(--blue);
-  box-shadow: 0 8px 24px rgba(30, 64, 175, 0.14);
-  transform: translateY(-2px);
+@media (hover: hover) {
+  .feed-card--link:hover {
+    background: #ffffff;
+    border-color: var(--blue);
+    box-shadow: 0 8px 24px rgba(30, 64, 175, 0.14);
+    transform: translateY(-2px);
+  }
+
+  .feed-card--link:hover .feed-card__action {
+    color: var(--navy);
+    transform: translateX(4px);
+  }
+}
+
+.feed-card--link:active {
+  transform: translateY(0);
 }
 
 .feed-card__action {
@@ -996,22 +1020,6 @@ h3 {
   font-weight: 800;
   font-size: 0.88rem;
   transition: color 0.2s, transform 0.2s;
-}
-
-.feed-card--link:hover .feed-card__action {
-  color: var(--navy);
-  transform: translateX(4px);
-}
-
-.feed-card--link {
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-
-.feed-card--link:hover {
-  transform: translateY(-2px);
-  border-color: var(--blue);
-  box-shadow: 0 8px 24px rgba(30, 64, 175, 0.12);
 }
 
 .feed-card__category--green {
@@ -2103,7 +2111,13 @@ h3 {
   transition: color 0.2s;
 }
 
-.contact-detail-value a:hover {
+@media (hover: hover) {
+  .contact-detail-value a:hover {
+    color: #e11d48;
+  }
+}
+
+.contact-detail-value a:active {
   color: #e11d48;
 }
 
@@ -2255,12 +2269,14 @@ h3 {
   transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.button-back-prominent:hover {
-  background: var(--navy);
-  color: #ffffff;
-  border-color: var(--navy);
-  transform: translateX(-4px);
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.35);
+@media (hover: hover) {
+  .button-back-prominent:hover {
+    background: var(--navy);
+    color: #ffffff;
+    border-color: var(--navy);
+    transform: translateX(-4px);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.35);
+  }
 }
 
 /* Lightbox Modal */
