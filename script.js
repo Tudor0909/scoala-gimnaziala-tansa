@@ -487,7 +487,7 @@
         iframe.title = "Hartă Google Maps — Școala Gimnazială Tansa, Iași";
         iframe.loading = "lazy";
         iframe.referrerPolicy = "no-referrer-when-downgrade";
-        iframe.src = "https://www.google.com/maps?q=Scoala+Gimnaziala+Tansa&z=17&output=embed";
+        iframe.src = "https://www.google.com/maps?q=%C8%98coala+Tansa,+Tansa&z=17&output=embed";
         iframe.style.cssText = "width:100%;height:100%;border:0;";
         iframe.allowFullscreen = true;
         frameTansa.appendChild(iframe);
