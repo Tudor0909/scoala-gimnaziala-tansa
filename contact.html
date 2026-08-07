@@ -132,9 +132,16 @@
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 </div>
                 <div>
-                  <span class="contact-detail-label">ADRESĂ</span>
-                  <div class="contact-detail-value">
-                    <a href="https://maps.app.goo.gl/pTTr8KUAeULFXEAT7" target="_blank" rel="noopener noreferrer">Loc. Tansa, Jud. Iași, Cod poștal 707495</a>
+                  <span class="contact-detail-label">ADRESE LOCAȚII</span>
+                  <div class="contact-detail-value" style="display: flex; flex-direction: column; gap: 8px;">
+                    <div>
+                      <strong>Tansa (Unitate principală):</strong><br>
+                      <a href="https://maps.app.goo.gl/pTTr8KUAeULFXEAT7" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: var(--blue);">Loc. Tansa, Jud. Iași, Cod poștal 707495</a>
+                    </div>
+                    <div style="margin-top: 4px;">
+                      <strong>Suhuleț (Structură):</strong><br>
+                      <a href="https://maps.app.goo.gl/rL3KsZLqhPiS5qn87" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: var(--blue);">Loc. Suhuleț, Com. Tansa, Jud. Iași, Cod poștal 707496</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -209,14 +216,26 @@
 
           </div>
 
-          <!-- Jos: Titlu + Hartă Tansa full-width -->
+          <!-- Jos: Titlu + Hartă Tansa/Suhuleț -->
           <div id="harta" class="searchable" style="margin-bottom: 16px;">
             <p class="eyebrow" style="color: var(--green); margin-bottom: 4px;">LOCAȚIE</p>
-            <h2 style="font-size: 1.6rem; margin: 0;">Unde ne găsești</h2>
+            <h2 style="font-size: 1.6rem; margin: 0; margin-bottom: 16px;">Unde ne găsești</h2>
+
+            <!-- Butoane selecție locație -->
+            <div class="map-tabs" style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <button type="button" class="map-tab active" data-location="tansa" style="padding: 10px 20px; font-size: 0.95rem; font-weight: 800; border-radius: 8px; border: 1.5px solid var(--blue); background: var(--blue); color: #ffffff; cursor: pointer; transition: all 0.2s;">
+                Locația Tansa (Unitate principală)
+              </button>
+              <button type="button" class="map-tab" data-location="suhulet" style="padding: 10px 20px; font-size: 0.95rem; font-weight: 800; border-radius: 8px; border: 1.5px solid var(--line); background: var(--paper); color: var(--navy); cursor: pointer; transition: all 0.2s;">
+                Locația Suhuleț (Structură)
+              </button>
+            </div>
           </div>
-          <div style="border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-small); height:420px; border: 1px solid var(--line);">
-            <div class="map-placeholder" id="mapPlaceholder" style="display:none;"></div>
-            <div class="map-frame" id="mapFrame" style="height:100%;"></div>
+          <div style="border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-small); height:420px; border: 1px solid var(--line); position: relative;">
+            <!-- Hartă Tansa -->
+            <div class="map-frame" id="mapFrameTansa" style="height:100%; width:100%;"></div>
+            <!-- Hartă Suhuleț -->
+            <div class="map-frame" id="mapFrameSuhulet" style="height:100%; width:100%; display:none;"></div>
           </div>
         </div>
       </section>

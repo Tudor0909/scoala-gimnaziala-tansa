@@ -36,8 +36,7 @@
   const siteSearchForm = document.querySelector(".site-search");
   const searchStatus = document.querySelector("#searchStatus");
   const searchableItems = Array.from(document.querySelectorAll(".searchable"));
-  const mapPlaceholder = document.querySelector("#mapPlaceholder");
-  const mapFrame = document.querySelector("#mapFrame");
+
 
   function clamp(value, min, max) {
     return Math.min(Math.max(value, min), max);
@@ -472,26 +471,72 @@
 
 
 
-  function loadMap() {
-    if (!mapFrame) {
+  function setupMapTabs() {
+    const mapTabs = document.querySelectorAll(".map-tab");
+    const frameTansa = document.getElementById("mapFrameTansa");
+    const frameSuhulet = document.getElementById("mapFrameSuhulet");
+
+    if (!frameTansa || !frameSuhulet) {
       return;
     }
 
-    if (mapFrame.dataset.loaded === "true") {
-      return;
+    function loadMapFor(location) {
+      if (location === "tansa") {
+        if (frameTansa.dataset.loaded === "true") return;
+        const iframe = document.createElement("iframe");
+        iframe.title = "Hartă Google Maps — Școala Gimnazială Tansa, Iași";
+        iframe.loading = "lazy";
+        iframe.referrerPolicy = "no-referrer-when-downgrade";
+        iframe.src = "https://www.google.com/maps?q=%C8%98coala+Tansa,+Tansa&output=embed";
+        iframe.style.cssText = "width:100%;height:100%;border:0;";
+        iframe.allowFullscreen = true;
+        frameTansa.appendChild(iframe);
+        frameTansa.dataset.loaded = "true";
+      } else if (location === "suhulet") {
+        if (frameSuhulet.dataset.loaded === "true") return;
+        const iframe = document.createElement("iframe");
+        iframe.title = "Hartă Google Maps — Școala Gimnazială Suhuleț, Iași";
+        iframe.loading = "lazy";
+        iframe.referrerPolicy = "no-referrer-when-downgrade";
+        iframe.src = "https://www.google.com/maps?q=Scoala+Suhulet,+Iasi&output=embed";
+        iframe.style.cssText = "width:100%;height:100%;border:0;";
+        iframe.allowFullscreen = true;
+        frameSuhulet.appendChild(iframe);
+        frameSuhulet.dataset.loaded = "true";
+      }
     }
 
-    const iframe = document.createElement("iframe");
-    iframe.title = "Hartă Google Maps — Școala Gimnazială Tansa, Iași";
-    iframe.loading = "lazy";
-    iframe.referrerPolicy = "no-referrer-when-downgrade";
-    iframe.src = "https://www.google.com/maps?q=%C8%98coala+Tansa,+Tansa&output=embed";
-    iframe.style.cssText = "width:100%;height:100%;border:0;";
-    iframe.allowFullscreen = true;
+    // Load initial map (Tansa)
+    loadMapFor("tansa");
 
-    mapFrame.appendChild(iframe);
-    mapFrame.dataset.loaded = "true";
-    if (mapPlaceholder) mapPlaceholder.hidden = true;
+    mapTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const location = tab.dataset.location;
+
+        // Toggle active button style
+        mapTabs.forEach((t) => {
+          t.classList.remove("active");
+          t.style.background = "var(--paper)";
+          t.style.color = "var(--navy)";
+          t.style.borderColor = "var(--line)";
+        });
+        tab.classList.add("active");
+        tab.style.background = "var(--blue)";
+        tab.style.color = "#ffffff";
+        tab.style.borderColor = "var(--blue)";
+
+        // Toggle frame visibility and load
+        if (location === "tansa") {
+          frameTansa.style.display = "block";
+          frameSuhulet.style.display = "none";
+          loadMapFor("tansa");
+        } else {
+          frameTansa.style.display = "none";
+          frameSuhulet.style.display = "block";
+          loadMapFor("suhulet");
+        }
+      });
+    });
   }
 
   function setupScrollAnimations() {
@@ -677,7 +722,7 @@
   setupTabs();
   setupSearch();
   setupScrollButtons();
-  loadMap();
+  setupMapTabs();
   setupLightbox();
   setupScrollAnimations();
   setupBackToTop();
