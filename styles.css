@@ -1540,9 +1540,21 @@ h3 {
   text-decoration: none;
 }
 
-.site-footer a:hover,
-.footer-button:hover {
-  text-decoration: underline;
+@media (hover: hover) {
+  .site-footer a:hover,
+  .footer-button:hover {
+    text-decoration: underline;
+  }
+}
+
+.site-footer a:focus,
+.site-footer a:active,
+.footer-button:focus,
+.footer-button:active {
+  outline: none !important;
+  box-shadow: none !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-decoration: none !important;
 }
 
 .footer-bottom {
