@@ -169,10 +169,10 @@
     {
       title: "Profil instituțional & Structură",
       eyebrow: "Unitate de învățământ",
-      desc: "Școala Gimnazială Tansa este o unitate de învățământ public cu personalitate juridică (inclusiv Școala Primară Suhuleț)",
+      desc: "Școala Gimnazială Tansa este o unitate de învățământ public (inclusiv Școala Primară Suhuleț)",
       badge: "Școala noastră",
       url: "scoala-noastra.html#profil",
-      keywords: "unitate invatamant profil institutional structura personalitate juridica uni prof"
+      keywords: "unitate invatamant profil institutional structura uni prof"
     },
     {
       title: "Dotări",
