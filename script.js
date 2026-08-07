@@ -177,7 +177,7 @@
     {
       title: "Dotări",
       eyebrow: "Facilități & Infrastructură",
-      desc: "5 corpuri de clădiri cu 14 săli de clasă, laboratoare de informatică, biologie, fizică-chimie și bibliotecă",
+      desc: "Corpuri de clădire renovate în Tansa și Suhuleț, laboratoare, bibliotecă și teren de sport multifuncțional cu nocturnă",
       badge: "Școala noastră",
       url: "scoala-noastra.html#baza",
       keywords: "facilitati baza materiala laborator informatica biologie chimie biblioteca corpuri cladiri"
