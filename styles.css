@@ -2349,3 +2349,10 @@ h3 {
 
 
 /* deploy */
+
+/* Ascunde Vercel Toolbar (triunghiul ▲ de feedback din coltul ecranului) */
+vercel-live-feedback,
+#vercel-live-feedback,
+[data-vercel-live-feedback] {
+  display: none !important;
+}
