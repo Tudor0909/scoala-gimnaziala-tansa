@@ -184,7 +184,7 @@
     },
     {
       title: "Elevii noștri",
-      eyebrow: "Efectiv elevi",
+      eyebrow: "Populație școlară",
       desc: "156 elevi înscriși în învățământul primar și gimnazial (clasele pregătitoare – VIII)",
       badge: "Școala noastră",
       url: "scoala-noastra.html#elevi",
