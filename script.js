@@ -175,7 +175,7 @@
       keywords: "unitate invatamant profil institutional structura personalitate juridica uni prof"
     },
     {
-      title: "Facilități & Bază Materială",
+      title: "Dotări",
       eyebrow: "Facilități & Dotări",
       desc: "5 corpuri de clădiri cu 14 săli de clasă, laboratoare de informatică, biologie, fizică-chimie, bibliotecă și internet",
       badge: "Școala noastră",
