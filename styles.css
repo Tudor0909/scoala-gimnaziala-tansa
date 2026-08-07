@@ -408,6 +408,7 @@ button {
   }
 }
 
+.back-to-top.is-active,
 .back-to-top:active {
   background: #2563eb;
   transform: translateY(2px) scale(0.95);

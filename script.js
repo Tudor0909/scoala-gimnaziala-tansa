@@ -602,6 +602,7 @@
         btn.classList.add("is-visible");
       } else {
         btn.classList.remove("is-visible");
+        btn.classList.remove("is-active");
       }
     };
 
@@ -609,6 +610,7 @@
     toggleBtn();
 
     btn.addEventListener("click", () => {
+      btn.classList.add("is-active");
       window.scrollTo({ top: 0, behavior: "smooth" });
       setTimeout(() => {
         btn.blur();
