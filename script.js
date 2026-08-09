@@ -309,7 +309,7 @@
     // ── ACTIVITĂȚI ──
     {
       title: "Festivalul Toamnei",
-      eyebrow: "Activitate școlară",
+      eyebrow: "",
       desc: "Activitate școlară tradițională desfășurată la Structura Suhuleț (24 Octombrie 2024)",
       badge: "Activități",
       url: "proiecte.html",
