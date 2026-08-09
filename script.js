@@ -802,9 +802,13 @@
     // Populate metadata and header text
     document.title = `${item.title} | Școala Gimnazială Tansa`;
     
-    document.getElementById("newsHeroEyebrow").innerHTML = item.eyebrow;
+    const eyebrowEl = document.getElementById("newsHeroEyebrow");
+    if (eyebrowEl) eyebrowEl.innerHTML = item.eyebrow;
+
     heroTitle.textContent = item.title;
-    document.getElementById("newsHeroDesc").textContent = item.heroDesc;
+
+    const descEl = document.getElementById("newsHeroDesc");
+    if (descEl) descEl.textContent = item.heroDesc;
 
     // Populate badge (isNew or Category)
     const badge = document.getElementById("newsBadge");
