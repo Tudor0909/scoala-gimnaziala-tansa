@@ -68,7 +68,7 @@
       bodyTitle: "Investiție de 533.000 lei în infrastructura școlară",
       paragraphs: [
         "Școala Gimnazială Tansa derulează un proiect european important pentru dotarea și modernizarea sălilor de clasă, a cabinetelor de specialitate și a spațiilor de învățământ, finanțat prin Planul Național de Redresare și Reziliență (PNRR).",
-        "Proiectul include achiziția de mobilier modern ergonomic, table inteligente interactive, sisteme audio-video avansate, laptopuri pentru cadrele didactice și elevi, precum și materiale didactice de ultimă generație destinate atât corpului principal al școlii, cât și Școlii Primare Suhuleț."
+        "Proiectul include achiziția de mobilier modern ergonomic, table inteligente interactive, sisteme audio-video avansate, laptopuri pentru cadrele didactice și elevi, precum și materiale didactice de ultimă generație destinate atât corpului principal al școlii, cât și Structurii Suhuleț."
       ],
       actionBox: {
         type: "link",
