@@ -27,6 +27,49 @@
     }
   };
 
+  const NOUTATI_DATABASE = [
+    {
+      id: "pdi-2025-2029",
+      title: "Planul de Dezvoltare Instituțională (PDI 2025-2029)",
+      url: "pdi-2025-2029.html",
+      date: "2025-10-02",
+      dateFormatted: "2 oct. 2025",
+      excerpt: "A fost aprobat și publicat Planul de Dezvoltare Instituțională al Școlii Gimnaziale Tansa pentru perioada 2025-2029. Deschideți pagina dedicată și documentul PDF.",
+      isNew: true,
+      keywords: "pdi plan dezvoltare institutionala strategie 2025 2029 aprobare documente"
+    },
+    {
+      id: "modernizare-sali",
+      title: "Dotări moderne pentru sălile de clasă",
+      url: "modernizare-sali.html",
+      date: "2025-03-19",
+      dateFormatted: "19 martie 2025",
+      excerpt: "Școala Gimnazială Tansa beneficiază de o investiție de 533.000 lei pentru mobilier, echipamente digitale și materiale didactice.",
+      isNew: false,
+      keywords: "pnrr dotari moderne mobilier echipamente digitale 533000 lei investitie modernizare"
+    }
+  ];
+
+  function renderNews() {
+    const newsList = document.querySelector(".news-list");
+    if (!newsList) return;
+
+    newsList.innerHTML = NOUTATI_DATABASE.map(item => `
+      <div class="feed-card searchable">
+        ${item.isNew ? '<span class="badge-new-pulse">NOU</span>' : ''}
+        <div>
+          <h3 style="color: var(--blue); margin-bottom: 6px;">${item.title}</h3>
+          <p style="margin-bottom: 12px;">${item.excerpt}</p>
+          <a class="feed-card__action" href="${item.url}">Citește noutatea</a>
+        </div>
+        <time datetime="${item.date}">${item.dateFormatted}</time>
+      </div>
+    `).join("");
+  }
+
+  // Render news dynamically before DOM selectors query .searchable items
+  renderNews();
+
   const root = document.documentElement;
   const body = document.body;
   const mainNav = document.querySelector(".main-nav");
@@ -225,22 +268,14 @@
       url: "index.html#noutati",
       keywords: "noutati stiri anunturi nou"
     },
-    {
-      title: "Dotări moderne pentru sălile de clasă",
-      eyebrow: "Proiect PNRR",
-      desc: "Proiect european PNRR în valoare de 533.000 lei — mobilier și echipamente digitale",
+    ...NOUTATI_DATABASE.map(item => ({
+      title: item.title,
+      eyebrow: item.isNew ? "Noutate Nouă" : "Noutate",
+      desc: item.excerpt,
       badge: "Noutăți",
-      url: "modernizare-sali.html",
-      keywords: "pnrr dotari moderne mobilier echipamente digitale 533000 lei investitie modernizare"
-    },
-    {
-      title: "Planul de Dezvoltare Instituțională (PDI 2025-2029)",
-      eyebrow: "Document strategic",
-      desc: "Documentul strategic de orientare al Școlii Gimnaziale Tansa pentru perioada 2025-2029",
-      badge: "Noutăți",
-      url: "pdi-2025-2029.html",
-      keywords: "pdi plan dezvoltare institutionala strategie 2025 2029 aprobare documente"
-    },
+      url: item.url,
+      keywords: item.keywords
+    })),
 
     // ── ACTIVITĂȚI ──
     {
