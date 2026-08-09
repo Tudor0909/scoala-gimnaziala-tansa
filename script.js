@@ -71,10 +71,9 @@
       actionBox: {
         type: "link",
         borderLeftColor: "var(--green)",
-        eyebrow: "Articol de presă — Adminis.ro",
-        title: "Școala din Tansa beneficiază de un proiect european pentru dotarea și modernizarea sălilor de clasă",
-        meta: "Publicat în presa regională despre investiția de la Tansa",
-        btnText: "Citește pe Adminis.ro",
+        title: "Articol de presă — Adminis.ro",
+        meta: "Școala din Tansa beneficiază de un proiect european pentru dotarea și modernizarea sălilor de clasă",
+        btnText: "Citește articolul",
         url: "https://adminis.ro/stiri/scoala-din-tansa-beneficiaza-de-un-proiect-european-pentru-dotarea-si-modernizarea-salilor-de-clasa/"
       }
     }
@@ -848,9 +847,6 @@
       actionBox.style.borderLeft = `5px solid ${item.actionBox.borderLeftColor}`;
       
       let html = "<div>";
-      if (item.actionBox.type === "link") {
-        html += `<span style="font-size: 0.82rem; font-weight: 900; color: ${item.actionBox.borderLeftColor}; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px;">${item.actionBox.eyebrow}</span>`;
-      }
       html += `<strong style="font-size: 1.1rem; color: var(--navy); display: block; margin-bottom: 4px;">${item.actionBox.title}</strong>`;
       html += `<span style="color: var(--muted); font-size: 0.9rem; font-weight: 600;">${item.actionBox.meta}</span>`;
       html += "</div>";
