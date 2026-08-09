@@ -31,22 +31,54 @@
     {
       id: "pdi-2025-2029",
       title: "Planul de Dezvoltare Instituțională (PDI 2025-2029)",
-      url: "pdi-2025-2029.html",
+      url: "noutate.html?id=pdi-2025-2029",
       date: "2025-10-02",
       dateFormatted: "2 oct. 2025",
       excerpt: "A fost aprobat și publicat Planul de Dezvoltare Instituțională al Școlii Gimnaziale Tansa pentru perioada 2025-2029. Deschideți pagina dedicată și documentul PDF.",
       isNew: true,
-      keywords: "pdi plan dezvoltare institutionala strategie 2025 2029 aprobare documente"
+      keywords: "pdi plan dezvoltare institutionala strategie 2025 2029 aprobare documente",
+      eyebrow: "DOCUMENTE OFICIALE &bull; PUBLICAȚIE 2 OCTOMBRIE 2025",
+      heroDesc: "Documentul strategic de orientare și dezvoltare a Școlii Gimnaziale Tansa pentru perioada 2025-2029.",
+      category: "DOCUMENTE OFICIALE",
+      bodyTitle: "Prezentare generală PDI 2025-2029",
+      paragraphs: [
+        "Școala Gimnazială Tansa anunță aprobarea și publicarea oficială a <strong>Planului de Dezvoltare Instituțională (PDI) pentru perioada 2025-2029</strong>. Documentul stabilește prioritățile strategice, obiectivele educaționale, măsurile de modernizare digitală și investițiile în infrastructura școlară pentru următorii 4 ani."
+      ],
+      actionBox: {
+        type: "download",
+        borderLeftColor: "var(--blue)",
+        title: "Planul de Dezvoltare Instituțională 2025-2029.pdf",
+        meta: "Document PDF oficial &bull; 50 pagini &bull; 5.9 MB",
+        btnText: "Deschide PDF",
+        url: "documente/pdi-tansa-2025-2029.pdf"
+      }
     },
     {
       id: "modernizare-sali",
       title: "Dotări moderne pentru sălile de clasă",
-      url: "modernizare-sali.html",
+      url: "noutate.html?id=modernizare-sali",
       date: "2025-03-19",
       dateFormatted: "19 martie 2025",
       excerpt: "Școala Gimnazială Tansa beneficiază de o investiție de 533.000 lei pentru mobilier, echipamente digitale și materiale didactice.",
       isNew: false,
-      keywords: "pnrr dotari moderne mobilier echipamente digitale 533000 lei investitie modernizare"
+      keywords: "pnrr dotari moderne mobilier echipamente digitale 533000 lei investitie modernizare",
+      eyebrow: "INVESTIȚII ȘI MODERNIZARE &bull; 19 MARTIE 2025",
+      heroDesc: "Școala Gimnazială Tansa beneficiază de un proiect european în valoare de 533.000 lei pentru dotarea și modernizarea sălilor de clasă.",
+      category: "PROIECT EUROPEAN",
+      bodyTitle: "Investiție de 533.000 lei în infrastructura școlară",
+      paragraphs: [
+        "Școala Gimnazială Tansa derulează un proiect european important pentru dotarea și modernizarea sălilor de clasă, a cabinetelor de specialitate și a spațiilor de învățământ, finanțat prin Planul Național de Redresare și Reziliență (PNRR).",
+        "Proiectul include achiziția de mobilier modern ergonomic, table inteligente interactive, sisteme audio-video avansate, laptopuri pentru cadrele didactice și elevi, precum și materiale didactice de ultimă generație destinate atât corpului principal al școlii, cât și Școlii Primare Suhuleț."
+      ],
+      actionBox: {
+        type: "link",
+        borderLeftColor: "var(--green)",
+        eyebrow: "Articol de presă — Adminis.ro",
+        title: "Școala din Tansa beneficiază de un proiect european pentru dotarea și modernizarea sălilor de clasă",
+        meta: "Publicat în presa regională despre investiția de la Tansa",
+        btnText: "Citește pe Adminis.ro",
+        url: "https://adminis.ro/stiri/scoala-din-tansa-beneficiaza-de-un-proiect-european-pentru-dotarea-si-modernizarea-salilor-de-clasa/"
+      }
     }
   ];
 
@@ -753,6 +785,87 @@
     }
   }
 
+  function initNewsDetailPage() {
+    const heroTitle = document.getElementById("newsHeroTitle");
+    if (!heroTitle) return; // Not on the news detail page
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const newsId = urlParams.get("id");
+    const item = NOUTATI_DATABASE.find(x => x.id === newsId);
+
+    if (!item) {
+      // Redirect to homepage news if id not found
+      window.location.replace("index.html#noutati");
+      return;
+    }
+
+    // Populate metadata and header text
+    document.title = `${item.title} | Școala Gimnazială Tansa`;
+    
+    document.getElementById("newsHeroEyebrow").innerHTML = item.eyebrow;
+    heroTitle.textContent = item.title;
+    document.getElementById("newsHeroDesc").textContent = item.heroDesc;
+
+    // Populate badge (isNew or Category)
+    const badge = document.getElementById("newsBadge");
+    if (badge) {
+      if (item.isNew) {
+        badge.style.display = "inline-flex";
+        badge.textContent = "NOU";
+      } else if (item.category) {
+        badge.style.display = "inline-flex";
+        badge.className = "feed-card__category";
+        badge.style.fontSize = "0.85rem";
+        badge.style.padding = "6px 14px";
+        badge.style.margin = "0";
+        badge.style.background = item.id === "modernizare-sali" ? "var(--green-soft)" : "var(--blue-soft)";
+        badge.style.color = item.id === "modernizare-sali" ? "#155329" : "var(--navy)";
+        badge.textContent = item.category;
+      } else {
+        badge.style.display = "none";
+      }
+    }
+
+    // Populate date
+    const timeEl = document.getElementById("newsDate");
+    if (timeEl) {
+      timeEl.setAttribute("datetime", item.date);
+      timeEl.textContent = `Publicat la ${item.dateFormatted}`;
+    }
+
+    // Populate content title and body
+    document.getElementById("newsBodyTitle").textContent = item.bodyTitle;
+
+    const bodyContent = document.getElementById("newsBodyContent");
+    bodyContent.innerHTML = item.paragraphs
+      .map(p => `<p style="font-size: 1.05rem; line-height: 1.7; color: var(--navy); margin-bottom: 20px;">${p}</p>`)
+      .join("");
+
+    // Populate dynamic Action Box (Download PDF / Link external)
+    const actionBox = document.getElementById("newsActionBox");
+    if (actionBox && item.actionBox) {
+      actionBox.style.borderLeft = `5px solid ${item.actionBox.borderLeftColor}`;
+      
+      let html = "<div>";
+      if (item.actionBox.type === "link") {
+        html += `<span style="font-size: 0.82rem; font-weight: 900; color: ${item.actionBox.borderLeftColor}; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px;">${item.actionBox.eyebrow}</span>`;
+      }
+      html += `<strong style="font-size: 1.1rem; color: var(--navy); display: block; margin-bottom: 4px;">${item.actionBox.title}</strong>`;
+      html += `<span style="color: var(--muted); font-size: 0.9rem; font-weight: 600;">${item.actionBox.meta}</span>`;
+      html += "</div>";
+      
+      html += `
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a class="button button--primary" href="${item.actionBox.url}" target="_blank" rel="noreferrer" style="padding: 10px 20px; font-weight: 800;">
+            ${item.actionBox.btnText}
+          </a>
+        </div>
+      `;
+      
+      actionBox.innerHTML = html;
+    }
+  }
+
   setupNavigation();
   setupTabs();
   setupSearch();
@@ -763,4 +876,5 @@
   setupBackToTop();
   setupHeaderButtonsFix();
   setupContactForm();
+  initNewsDetailPage();
 })();
