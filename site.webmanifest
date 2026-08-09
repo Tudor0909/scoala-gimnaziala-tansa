@@ -1,0 +1,26 @@
+{
+  "name": "Școala Gimnazială Tansa",
+  "short_name": "Școala Tansa",
+  "description": "Site-ul oficial al Școlii Gimnaziale Tansa, județul Iași",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#1e3a8a",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/logo-tansa-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/logo-tansa-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
