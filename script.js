@@ -40,7 +40,6 @@
       eyebrow: "DOCUMENTE OFICIALE &bull; PUBLICAȚIE 2 OCTOMBRIE 2025",
       heroDesc: "Documentul strategic de orientare și dezvoltare a Școlii Gimnaziale Tansa pentru perioada 2025-2029.",
       category: "DOCUMENTE OFICIALE",
-      bodyTitle: "Prezentare generală PDI 2025-2029",
       paragraphs: [
         "Școala Gimnazială Tansa anunță aprobarea și publicarea oficială a <strong>Planului de Dezvoltare Instituțională (PDI) pentru perioada 2025-2029</strong>. Documentul stabilește prioritățile strategice, obiectivele educaționale, măsurile de modernizare digitală și investițiile în infrastructura școlară pentru următorii 4 ani."
       ],
@@ -65,7 +64,6 @@
       eyebrow: "INVESTIȚII ȘI MODERNIZARE &bull; 19 MARTIE 2025",
       heroDesc: "Școala Gimnazială Tansa beneficiază de un proiect european în valoare de 533.000 lei pentru dotarea și modernizarea sălilor de clasă.",
       category: "PROIECT EUROPEAN",
-      bodyTitle: "Investiție de 533.000 lei în infrastructura școlară",
       paragraphs: [
         "Școala Gimnazială Tansa derulează un proiect european important pentru dotarea și modernizarea sălilor de clasă, a cabinetelor de specialitate și a spațiilor de învățământ, finanțat prin Planul Național de Redresare și Reziliență (PNRR).",
         "Proiectul include achiziția de mobilier modern ergonomic, table inteligente interactive, sisteme audio-video avansate, laptopuri pentru cadrele didactice și elevi, precum și materiale didactice de ultimă generație destinate atât corpului principal al școlii, cât și Structurii Suhuleț."
@@ -829,7 +827,15 @@
     }
 
     // Populate content title and body
-    document.getElementById("newsBodyTitle").textContent = item.bodyTitle;
+    const bodyTitleEl = document.getElementById("newsBodyTitle");
+    if (bodyTitleEl) {
+      if (item.bodyTitle) {
+        bodyTitleEl.style.display = "block";
+        bodyTitleEl.textContent = item.bodyTitle;
+      } else {
+        bodyTitleEl.style.display = "none";
+      }
+    }
 
     const bodyContent = document.getElementById("newsBodyContent");
     bodyContent.innerHTML = item.paragraphs
