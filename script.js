@@ -810,21 +810,12 @@
     const descEl = document.getElementById("newsHeroDesc");
     if (descEl) descEl.textContent = item.heroDesc;
 
-    // Populate badge (isNew or Category)
+    // Populate badge (isNew)
     const badge = document.getElementById("newsBadge");
     if (badge) {
       if (item.isNew) {
         badge.style.display = "inline-flex";
         badge.textContent = "NOU";
-      } else if (item.category) {
-        badge.style.display = "inline-flex";
-        badge.className = "feed-card__category";
-        badge.style.fontSize = "0.85rem";
-        badge.style.padding = "6px 14px";
-        badge.style.margin = "0";
-        badge.style.background = item.id === "modernizare-sali" ? "var(--green-soft)" : "var(--blue-soft)";
-        badge.style.color = item.id === "modernizare-sali" ? "#155329" : "var(--navy)";
-        badge.textContent = item.category;
       } else {
         badge.style.display = "none";
       }
