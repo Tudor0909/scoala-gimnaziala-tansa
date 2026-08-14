@@ -129,6 +129,20 @@
     body.classList.remove("nav-open");
   }
 
+  function pagesMatch(pathA, pathB) {
+    const clean = (p) => {
+      let s = p.split("/").pop() || "index.html";
+      if (s.endsWith(".html")) {
+        s = s.slice(0, -5);
+      }
+      if (s === "" || s === "/") {
+        s = "index";
+      }
+      return s;
+    };
+    return clean(pathA) === clean(pathB);
+  }
+
   function setupNavigation() {
     navToggle?.addEventListener("click", () => {
       const isOpen = mainNav?.classList.toggle("is-open");
@@ -144,11 +158,12 @@
           const [linkPage, targetId] = href.split("#");
           const currentPath = window.location.pathname.split("/").pop() || "index.html";
           const resolvedLinkPage = linkPage || "index.html";
-          if ((resolvedLinkPage === currentPath || (currentPath === "" && resolvedLinkPage === "index.html")) && targetId) {
+          if (pagesMatch(resolvedLinkPage, currentPath) && targetId) {
             const targetElement = document.getElementById(targetId);
             if (targetElement) {
               e.preventDefault();
-              const headerOffset = 130;
+              const isMobile = window.innerWidth <= 860;
+              const headerOffset = isMobile ? 60 : 94;
               const elementPosition = targetElement.getBoundingClientRect().top;
               const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
               window.scrollTo({ top: offsetPosition, behavior: "smooth" });
@@ -172,16 +187,10 @@
 
     function updateActiveNav() {
       const currentPath = window.location.pathname.split("/").pop() || "index.html";
-      const isHomepage = currentPath === "index.html" || currentPath === "";
+      const isHomepage = pagesMatch(currentPath, "index.html");
 
       if (isHomepage) {
-        const noutatiElem = document.getElementById("noutati");
         let isNoutatiActive = window.location.hash === "#noutati";
-        if (noutatiElem) {
-          const rect = noutatiElem.getBoundingClientRect();
-          isNoutatiActive = rect.top <= 250 && rect.bottom > 150;
-        }
-
         navLinks.forEach((link) => {
           const href = link.getAttribute("href") || "";
           const [linkPage, linkHash] = href.split("#");
@@ -189,7 +198,7 @@
 
           if (linkHash === "noutati") {
             link.classList.toggle("is-active", isNoutatiActive);
-          } else if (resolvedLinkPage === "index.html" && !linkHash) {
+          } else if (pagesMatch(resolvedLinkPage, "index.html") && !linkHash) {
             link.classList.toggle("is-active", !isNoutatiActive);
           } else {
             link.classList.remove("is-active");
@@ -200,14 +209,64 @@
           const href = link.getAttribute("href") || "";
           const [linkPage, linkHash] = href.split("#");
           const resolvedLinkPage = linkPage || "index.html";
-          link.classList.toggle("is-active", resolvedLinkPage === currentPath && !linkHash);
+          link.classList.toggle("is-active", pagesMatch(resolvedLinkPage, currentPath) && !linkHash);
         });
       }
     }
 
+    const currentPath = window.location.pathname.split("/").pop() || "index.html";
+    const isHomepage = pagesMatch(currentPath, "index.html");
+    const noutatiElem = document.getElementById("noutati");
+    if (isHomepage && noutatiElem) {
+      const noutatiObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const isNoutatiActive = entry.isIntersecting;
+            if (window.location.hash !== "#noutati" || isNoutatiActive) {
+              navLinks.forEach((link) => {
+                const href = link.getAttribute("href") || "";
+                const [linkPage, linkHash] = href.split("#");
+                const resolvedLinkPage = linkPage || "index.html";
+
+                if (linkHash === "noutati") {
+                  link.classList.toggle("is-active", isNoutatiActive);
+                } else if (pagesMatch(resolvedLinkPage, "index.html") && !linkHash) {
+                  link.classList.toggle("is-active", !isNoutatiActive);
+                }
+              });
+            }
+          });
+        },
+        {
+          root: null,
+          rootMargin: "-120px 0px -60% 0px",
+          threshold: 0
+        }
+      );
+      noutatiObserver.observe(noutatiElem);
+    }
+
+    function scrollToHash() {
+      if (window.location.hash === "#noutati") {
+        const targetElement = document.getElementById("noutati");
+        if (targetElement) {
+          setTimeout(() => {
+            const isMobile = window.innerWidth <= 860;
+            const headerOffset = isMobile ? 60 : 94;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({ top: offsetPosition, behavior: "auto" });
+          }, 150);
+        }
+      }
+    }
+
     updateActiveNav();
-    window.addEventListener("hashchange", updateActiveNav);
-    window.addEventListener("scroll", updateActiveNav, { passive: true });
+    scrollToHash();
+    window.addEventListener("hashchange", () => {
+      updateActiveNav();
+      scrollToHash();
+    });
   }
 
 
@@ -629,10 +688,11 @@
       modal.className = "lightbox-modal";
       modal.setAttribute("role", "dialog");
       modal.setAttribute("aria-modal", "true");
+      modal.setAttribute("aria-label", "Vizualizare imagine");
       modal.innerHTML = `
         <div class="lightbox-modal__content">
           <button type="button" class="lightbox-modal__close" aria-label="Închide poze">&times;</button>
-          <img class="lightbox-modal__img" src="" alt="">
+          <img class="lightbox-modal__img" src="" alt="" width="800" height="600">
           <div class="lightbox-modal__caption"></div>
         </div>
       `;
@@ -706,6 +766,7 @@
       document.body.appendChild(btn);
     }
 
+    let toggleScheduled = false;
     const toggleBtn = () => {
       if (window.scrollY > 280) {
         btn.classList.add("is-visible");
@@ -715,7 +776,17 @@
       }
     };
 
-    window.addEventListener("scroll", toggleBtn, { passive: true });
+    const handleScroll = () => {
+      if (!toggleScheduled) {
+        toggleScheduled = true;
+        requestAnimationFrame(() => {
+          toggleBtn();
+          toggleScheduled = false;
+        });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     toggleBtn();
 
     btn.addEventListener("click", () => {

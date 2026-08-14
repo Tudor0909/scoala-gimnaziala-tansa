@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "sharp": "^0.35.3",
+    "terser": "^5.49.2"
+  }
+}
