@@ -1733,7 +1733,7 @@ h3 {
   }
 
   .container {
-    width: min(100% - 64px, var(--container));
+    width: min(100% - 32px,var(--container));
   }
 
   .site-header {
