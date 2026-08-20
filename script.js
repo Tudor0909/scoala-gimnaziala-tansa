@@ -175,6 +175,27 @@
       });
     });
 
+    // Intercept clicks on category chips to use consistent smooth scroll offsets
+    const chips = Array.from(document.querySelectorAll(".chip"));
+    chips.forEach((chip) => {
+      chip.addEventListener("click", (e) => {
+        const href = chip.getAttribute("href") || "";
+        if (href.startsWith("#")) {
+          const targetId = href.slice(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            const isMobile = window.innerWidth <= 860;
+            const headerOffset = isMobile ? 60 : 166;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+            history.pushState(null, null, `#${targetId}`);
+          }
+        }
+      });
+    });
+
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         closeMenu();
@@ -247,12 +268,17 @@
     }
 
     function scrollToHash() {
-      if (window.location.hash === "#noutati") {
-        const targetElement = document.getElementById("noutati");
+      const hash = window.location.hash;
+      if (hash && hash.startsWith("#")) {
+        const targetId = hash.slice(1);
+        const targetElement = document.getElementById(targetId);
         if (targetElement) {
           setTimeout(() => {
             const isMobile = window.innerWidth <= 860;
-            const headerOffset = isMobile ? 60 : 94;
+            let headerOffset = isMobile ? 60 : 94;
+            if (targetId !== "noutati") {
+              headerOffset = isMobile ? 60 : 166;
+            }
             const elementPosition = targetElement.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
             window.scrollTo({ top: offsetPosition, behavior: "auto" });
@@ -383,6 +409,22 @@
       badge: "Documente",
       url: "documente/orar-clase.pdf",
       keywords: "orar ore lectii pdf descarca"
+    },
+    {
+      title: "Burse școlare (Ghid & Criterii)",
+      eyebrow: "Resurse",
+      desc: "Tipurile de burse școlare (de merit, reziliență, sociale și tehnologice) și criteriile oficiale de acordare a acestora.",
+      badge: "Resurse",
+      url: "resurse.html#burse",
+      keywords: "burse merit rezilienta sociale tehnologice bani dosar cerere acte ajutoare"
+    },
+    {
+      title: "Evaluare Națională (Subiecte & Bareme)",
+      eyebrow: "Resurse",
+      desc: "Acces la numeroase variante de examen și teste de antrenament elaborate de Ministerul Educației, alături de baremele acestora.",
+      badge: "Resurse",
+      url: "resurse.html#evaluare",
+      keywords: "evaluare nationala subiecte bareme rezolvate romana matematica teste antrenament"
     },
 
     // ── FOOTER ──
