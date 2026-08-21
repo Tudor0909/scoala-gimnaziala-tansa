@@ -393,54 +393,104 @@
 
     // ── ACTIVITĂȚI ──
     {
+      title: "Activități & Proiecte",
+      eyebrow: "Proiecte școlare",
+      desc: "Activitățile școlare, evenimentele și proiectele desfășurate la Școala Gimnazială Tansa",
+      badge: "Activități",
+      url: "proiecte.html",
+      keywords: "activitati proiecte evenimente concursuri excursii serbari festivitate galerie foto"
+    },
+    {
       title: "Festivalul Toamnei",
-      eyebrow: "",
+      eyebrow: "Activitate tradițională",
       desc: "Activitate școlară tradițională desfășurată la Structura Suhuleț (24 Octombrie 2024)",
       badge: "Activități",
       url: "proiecte.html",
-      keywords: "festival toamnei suhulet recolta costume ateliere manifestare activitate"
+      keywords: "festival toamnei suhulet recolta costume ateliere manifestare activitate sarbatoare"
     },
 
     // ── DOCUMENTE ──
     {
+      title: "Documente oficiale",
+      eyebrow: "Documente",
+      desc: "Documente oficiale, regulamente, formulare și acte ale Școlii Gimnaziale Tansa",
+      badge: "Documente",
+      url: "documente.html",
+      keywords: "documente oficiale regulament formulare acte secretariat fisiere"
+    },
+    {
       title: "Orar clase",
       eyebrow: "Orar",
-      desc: "Deschide sau descarcă orarul oficial al claselor în format PDF",
+      desc: "Deschide sau descarcă orarul oficial al claselor în format PDF — program săptămânal",
       badge: "Documente",
       url: "documente/orar-clase.pdf",
-      keywords: "orar ore lectii pdf descarca"
+      keywords: "orar ore lectii pdf descarca program saptamanal clase cursuri"
+    },
+    {
+      title: "Planul de Dezvoltare Instituțională (PDI 2025-2029)",
+      eyebrow: "Document strategic",
+      desc: "Documentul strategic de orientare și dezvoltare a Școlii Gimnaziale Tansa pentru perioada 2025-2029 (PDF oficial, 50 pagini, 5.9 MB)",
+      badge: "Documente",
+      url: "documente/pdi-tansa-2025-2029.pdf",
+      keywords: "pdi plan dezvoltare institutionala strategie 2025 2029 aprobare document oficial pdf"
+    },
+
+    // ── RESURSE ──
+    {
+      title: "Resurse pentru elevi și părinți",
+      eyebrow: "Resurse",
+      desc: "Manuale digitale, subiecte de examene, ghiduri pentru burse și materiale educaționale utile",
+      badge: "Resurse",
+      url: "resurse.html",
+      keywords: "resurse elevi parinti materiale educationale ajutor informatii utile"
     },
     {
       title: "Burse școlare (Ghid & Criterii)",
-      eyebrow: "Resurse",
+      eyebrow: "Burse",
       desc: "Tipurile de burse școlare (de merit, reziliență, sociale și tehnologice) și criteriile oficiale de acordare a acestora.",
       badge: "Resurse",
       url: "resurse.html#burse",
-      keywords: "burse merit rezilienta sociale tehnologice bani dosar cerere acte ajutoare"
+      keywords: "burse merit rezilienta sociale tehnologice bani dosar cerere acte ajutoare criteriu acordare"
     },
     {
       title: "Evaluare Națională (Subiecte & Bareme)",
-      eyebrow: "Resurse",
+      eyebrow: "Examene",
       desc: "Acces la numeroase variante de examen și teste de antrenament elaborate de Ministerul Educației, alături de baremele acestora.",
       badge: "Resurse",
       url: "resurse.html#evaluare",
-      keywords: "evaluare nationala subiecte bareme rezolvate romana matematica teste antrenament"
+      keywords: "evaluare nationala subiecte bareme rezolvate romana matematica teste antrenament examen clasa VIII"
+    },
+    {
+      title: "Manuale digitale",
+      eyebrow: "Resurse educaționale",
+      desc: "Manuale digitale oficiale ale Ministerului Educației pentru toate clasele și materiile (manuale.edu.ro)",
+      badge: "Resurse",
+      url: "https://www.manuale.edu.ro/",
+      keywords: "manuale digitale online materii clase carti scolare ministerul educatiei"
+    },
+    {
+      title: "Subiecte Examene Naționale",
+      eyebrow: "Resurse examene",
+      desc: "Subiecte oficiale pentru Evaluarea Națională și Bacalaureat disponibile pe subiecte.edu.ro",
+      badge: "Resurse",
+      url: "https://subiecte.edu.ro/",
+      keywords: "subiecte examene nationale bacalaureat evaluare variante rezolvate"
     },
 
-    // ── FOOTER ──
+    // ── LEGĂTURI UTILE ──
     {
       title: "Ministerul Educației",
       eyebrow: "Legături utile",
       desc: "Portalul oficial al Ministerului Educației Naționale (edu.ro)",
-      badge: "Footer",
+      badge: "Legături utile",
       url: "https://www.edu.ro/",
-      keywords: "ministerul educatiei edu minister"
+      keywords: "ministerul educatiei edu minister national portal"
     },
     {
       title: "ISJ Iași (Inspectoratul Școlar)",
       eyebrow: "Legături utile",
       desc: "Inspectoratul Școlar Județean Iași (isjiasi.ro)",
-      badge: "Footer",
+      badge: "Legături utile",
       url: "https://www.isjiasi.ro/",
       keywords: "isj iasi inspectoratul scolar judetean"
     },
@@ -448,7 +498,7 @@
       title: "ARACIP (Fișa unității Tansa)",
       eyebrow: "Surse date publice",
       desc: "Fișa de evaluare și acreditare instituțională ARACIP pentru Școala Gimnazială Tansa",
-      badge: "Footer",
+      badge: "Legături utile",
       url: "https://aracip.eu/detalii-unitate-de-invatamant/223212",
       keywords: "aracip fisa acreditare evaluare calitate"
     },
@@ -456,9 +506,9 @@
       title: "Profil Școala ECO",
       eyebrow: "Surse date publice",
       desc: "Proiectul național Școala ECO — Școala Gimnazială Tansa",
-      badge: "Footer",
+      badge: "Legături utile",
       url: "https://scoalaeco.ro/is/scoala-gimnaziala-tansa/",
-      keywords: "eco ecologie mediu verde"
+      keywords: "eco ecologie mediu verde proiect national"
     }
   ];
 
@@ -472,6 +522,50 @@
       siteSearchForm.appendChild(dropdown);
     }
 
+    // ── Utilitare relevanță (modul-level, folosite și în live și în submit) ──
+    function isWordMatch(text, queryStr) {
+      if (!text) return false;
+      const words = text.split(/[\s,.\-—–/()+]+/);
+      return words.some((w) => w.startsWith(queryStr));
+    }
+
+    function calculateRelevance(entry, queryStr) {
+      const titleNorm    = normalize(entry.title    || "");
+      const eyebrowNorm  = normalize(entry.eyebrow  || "");
+      const descNorm     = normalize(entry.desc     || "");
+      const keywordsNorm = normalize(entry.keywords || "");
+
+      let score = 0;
+
+      // Titlu — prioritate maximă
+      if (titleNorm === queryStr)                   score += 2000; // potrivire exactă titlu
+      else if (titleNorm.startsWith(queryStr))      score += 1200; // titlu începe cu termenul
+      else if (isWordMatch(titleNorm, queryStr))    score += 900;  // cuvânt în titlu
+
+      // Eyebrow — prioritate secundară
+      if (eyebrowNorm === queryStr)                 score += 700;
+      else if (eyebrowNorm.startsWith(queryStr))    score += 500;
+      else if (isWordMatch(eyebrowNorm, queryStr))  score += 350;
+
+      // Keywords — potrivire pe cuvinte cheie
+      if (isWordMatch(keywordsNorm, queryStr))      score += 250;
+
+      // Descriere — cel mai slab semnal
+      if (descNorm.includes(queryStr))              score += 150;
+      else if (isWordMatch(descNorm, queryStr))     score += 100;
+
+      return score;
+    }
+
+    function runSearch(query) {
+      return SITE_SEARCH_DATABASE.map((entry) => ({
+        ...entry,
+        score: calculateRelevance(entry, query)
+      }))
+        .filter((entry) => entry.score > 0)
+        .sort((a, b) => b.score - a.score);
+    }
+
     function renderDropdown(matches, queryText) {
       if (!queryText.trim()) {
         dropdown.classList.remove("is-active");
@@ -480,13 +574,13 @@
       }
 
       if (matches.length === 0) {
-        dropdown.innerHTML = `<div class="search-dropdown__empty">Niciun rezultat pentru „${queryText}”. Încercați alți termeni (ex: elevi, PDI, orar, contact).</div>`;
+        dropdown.innerHTML = `<div class="search-dropdown__empty">Niciun rezultat pentru „${queryText}". Încercați alți termeni (ex: elevi, PDI, orar, contact).</div>`;
         dropdown.classList.add("is-active");
         return;
       }
 
       dropdown.innerHTML = matches
-        .slice(0, 5)
+        .slice(0, 6)
         .map(
           (item) => `
           <a class="search-dropdown__item" href="${item.url}">
@@ -519,47 +613,7 @@
         return;
       }
 
-      function isWordMatch(text, queryStr) {
-        if (!text) return false;
-        const words = text.split(/[\s,.\-—–/()]+/);
-        return words.some((w) => w.startsWith(queryStr));
-      }
-
-      function calculateRelevance(entry, queryStr) {
-        const titleNorm = normalize(entry.title || "");
-        const eyebrowNorm = normalize(entry.eyebrow || "");
-        const descNorm = normalize(entry.desc || "");
-        const keywordsNorm = normalize(entry.keywords || "");
-
-        let score = 0;
-
-        // Title — highest priority
-        if (titleNorm === queryStr) score += 2000;                  // titlu exact identic
-        else if (titleNorm.startsWith(queryStr)) score += 1200;     // titlu începe cu termenul
-        else if (isWordMatch(titleNorm, queryStr)) score += 900;    // cuvânt în titlu
-
-        // Eyebrow — secundar
-        if (eyebrowNorm === queryStr) score += 700;
-        else if (eyebrowNorm.startsWith(queryStr)) score += 500;
-        else if (isWordMatch(eyebrowNorm, queryStr)) score += 350;
-
-        // Keywords — potrivire directă
-        if (isWordMatch(keywordsNorm, queryStr)) score += 250;
-
-        // Desc — cel mai slab
-        if (isWordMatch(descNorm, queryStr)) score += 100;
-
-        return score;
-      }
-
-      const matchingDatabase = SITE_SEARCH_DATABASE.map((entry) => ({
-        ...entry,
-        score: calculateRelevance(entry, query)
-      }))
-        .filter((entry) => entry.score > 0)
-        .sort((a, b) => b.score - a.score);
-
-      renderDropdown(matchingDatabase, queryText);
+      renderDropdown(runSearch(query), queryText);
     }
 
     siteSearch.addEventListener("input", handleLiveSearch);
@@ -584,42 +638,9 @@
       const query = normalize(queryText);
       if (!query) return;
 
-      function isWordMatch(text, queryStr) {
-        const words = text.split(/[\s,.\-—–/()]+/);
-        return words.some((w) => w.startsWith(queryStr));
-      }
-
-      function calculateRelevance(entry, queryStr) {
-        const titleNorm = normalize(entry.title);
-        const descNorm = normalize(entry.desc);
-        const keywordsNorm = normalize(entry.keywords);
-
-        const titleWordMatch = isWordMatch(titleNorm, queryStr);
-        const descWordMatch = isWordMatch(descNorm, queryStr);
-        const keywordWordMatch = isWordMatch(keywordsNorm, queryStr);
-
-        if (!titleWordMatch && !descWordMatch && !keywordWordMatch) {
-          return 0;
-        }
-
-        let score = 0;
-        if (titleNorm.startsWith(queryStr)) score += 1000;
-        else if (titleWordMatch) score += 500;
-        else if (descWordMatch) score += 200;
-        else if (keywordWordMatch) score += 100;
-
-        return score;
-      }
-
-      const matchingDatabase = SITE_SEARCH_DATABASE.map((entry) => ({
-        ...entry,
-        score: calculateRelevance(entry, query)
-      }))
-        .filter((entry) => entry.score > 0)
-        .sort((a, b) => b.score - a.score);
-
-      if (matchingDatabase.length > 0) {
-        window.location.href = matchingDatabase[0].url;
+      const matches = runSearch(query);
+      if (matches.length > 0) {
+        window.location.href = matches[0].url;
       }
     });
   }
@@ -781,7 +802,13 @@
         openLightbox(src, alt);
       });
 
-      if (parent && !parent.querySelector(".view-photo-btn")) {
+      const existingBtn = parent ? parent.querySelector(".view-photo-btn") : null;
+      if (existingBtn) {
+        existingBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          openLightbox(src, alt);
+        });
+      } else if (parent) {
         const btn = document.createElement("button");
         btn.type = "button";
         btn.className = "view-photo-btn";
