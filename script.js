@@ -753,13 +753,45 @@
       modal.setAttribute("aria-modal", "true");
       modal.setAttribute("aria-label", "Vizualizare imagine");
       modal.innerHTML = `
+        <button type="button" class="lightbox-modal__close" aria-label="Închide poze">&times;</button>
         <div class="lightbox-modal__content">
-          <button type="button" class="lightbox-modal__close" aria-label="Închide poze">&times;</button>
           <img class="lightbox-modal__img" src="" alt="" width="800" height="600">
           <div class="lightbox-modal__caption"></div>
         </div>
       `;
       document.body.appendChild(modal);
+
+      // Inject custom overrides for the close button positioning and hover color
+      const style = document.createElement("style");
+      style.textContent = `
+        .lightbox-modal__close {
+          position: absolute !important;
+          top: 24px !important;
+          right: 24px !important;
+          background: rgba(255, 255, 255, 0.15) !important;
+          border: 1px solid rgba(255, 255, 255, 0.3) !important;
+          color: #ffffff !important;
+          width: 44px !important;
+          height: 44px !important;
+          border-radius: 50% !important;
+          font-size: 1.8rem !important;
+          line-height: 1 !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          cursor: pointer !important;
+          transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease !important;
+          z-index: 10000 !important;
+        }
+        .lightbox-modal__close:hover,
+        .lightbox-modal__close:focus {
+          background-color: #ef4444 !important; /* red */
+          border-color: #ef4444 !important;
+          color: #ffffff !important;
+          transform: scale(1.08) !important;
+        }
+      `;
+      document.head.appendChild(style);
 
       const closeBtn = modal.querySelector(".lightbox-modal__close");
       closeBtn.addEventListener("click", closeLightbox);
