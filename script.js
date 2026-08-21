@@ -753,7 +753,7 @@
       modal.setAttribute("aria-modal", "true");
       modal.setAttribute("aria-label", "Vizualizare imagine");
       modal.innerHTML = `
-        <button type="button" class="lightbox-modal__close" aria-label="Închide poze">&times;</button>
+        <button type="button" class="lightbox-modal__close" aria-label="Închide poze"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: block;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
         <div class="lightbox-modal__content">
           <img class="lightbox-modal__img" src="" alt="" width="800" height="600">
           <div class="lightbox-modal__caption"></div>
@@ -774,14 +774,13 @@
           width: 44px !important;
           height: 44px !important;
           border-radius: 50% !important;
-          font-size: 1.8rem !important;
-          line-height: 1 !important;
           display: flex !important;
           align-items: center !important;
           justify-content: center !important;
           cursor: pointer !important;
           transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease !important;
           z-index: 10000 !important;
+          padding: 0 !important;
         }
         .lightbox-modal__close:hover,
         .lightbox-modal__close:focus {
